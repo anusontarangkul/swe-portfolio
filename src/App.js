@@ -1,4 +1,4 @@
-import Layout from "./pages/Layout";
+import Layout from "./pages/Layout/index.jsx";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { purple, green } from '@mui/material/colors'
 
