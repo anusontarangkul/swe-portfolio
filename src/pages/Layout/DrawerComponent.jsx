@@ -13,6 +13,8 @@ import {
   Box,
   CssBaseline,
   IconButton,
+  Divider,
+  Link,
 } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -20,6 +22,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import CallIcon from '@mui/icons-material/Call';
+// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+import NavRouter from './NavRouter';
 
 const drawerWidth = 300;
 
@@ -54,7 +59,8 @@ const DrawerComponent = (props) => {
             }}
           />
         </Grid>
-        <ListItemButton
+        <NavRouter />
+        {/* <ListItemButton
           sx={{
             marginTop: 4,
           }}
@@ -69,16 +75,35 @@ const DrawerComponent = (props) => {
         </ListItemButton>
         <ListItemButton>
           <ListItemText primary='Resume' />
-        </ListItemButton>
+        </ListItemButton> */}
         <Typography sx={{ fontSize: 30 }}>Social Media</Typography>
-        <GitHubIcon />
-        <LinkedInIcon />
-        <YouTubeIcon />
-        <TwitterIcon />
-        <Button variant='contained'>
-          <CallIcon />
-          Book a Call
-        </Button>
+        <Link href='https://github.com/anusontarangkul' target='_blank'>
+          <GitHubIcon />
+        </Link>
+        <Link
+          href='https://www.linkedin.com/in/anusontarangkul/'
+          target='_blank'
+        >
+          <LinkedInIcon />
+        </Link>
+        <Link
+          href='https://www.youtube.com/channel/UCYBwball06AdVuaHeH7adVw'
+          target='_blank'
+        >
+          <YouTubeIcon />
+        </Link>
+        <Link href='https://twitter.com/coding_david' target='_blank'>
+          <TwitterIcon />
+        </Link>
+        <Link
+          href='https://calendly.com/anusontarangkul/15min?month=2021-10'
+          target='_blank'
+        >
+          <Button variant='contained'>
+            <CallIcon />
+            Book a Call
+          </Button>
+        </Link>
       </Grid>
     </div>
   );
@@ -161,87 +186,5 @@ const DrawerComponent = (props) => {
     </Box>
   );
 };
-
-// const DrawerComponent = ({ open, setOpen }) => {
-//   return (
-//     <div>
-//       <SwipeableDrawer
-//         anchor='left'
-//         open={open}
-//         onClose={() => setOpen(false)}
-//         onOpen={() => {}}
-//       >
-//         <div style={{ width: '300px' }}>
-//           <Grid
-//             container
-//             spacing={0}
-//             direction='column'
-//             alignItems='center'
-//             // style={{ minHeight: '100vh' }}
-//           >
-//             <Grid
-//               item
-//               sx={{
-//                 paddingTop: 5,
-//               }}
-//             >
-//               <Avatar
-//                 alt='David Anusontarangkul'
-//                 sx={{
-//                   width: 120,
-//                   height: 120,
-//                 }}
-//               />
-//             </Grid>
-//             <ListItemButton
-//               sx={{
-//                 marginTop: 4,
-//               }}
-//             >
-//               <ListItemText primary='About' />
-//             </ListItemButton>
-//             <ListItemButton>
-//               <ListItemText primary='Skills' />
-//             </ListItemButton>
-//             <ListItemButton>
-//               <ListItemText primary='Projects' />
-//             </ListItemButton>
-//             <ListItemButton>
-//               <ListItemText primary='Resume' />
-//             </ListItemButton>
-//             <Typography sx={{ fontSize: 30 }}>Social Media</Typography>
-//             <GitHubIcon />
-//             <LinkedInIcon />
-//             <YouTubeIcon />
-//             <TwitterIcon />
-//             <Button variant='contained'>
-//               <CallIcon />
-//               Book a Call
-//             </Button>
-//           </Grid>
-
-//           {/* <AppBar
-//             sx={{
-//               position: 'static',
-//               height: 60,
-//               backgroundColor: 'pink',
-//             }}
-//           >
-//             <Toolbar>
-
-//               {/* <MenuIcon
-//                 sx={{
-//                   marginLeft: 1,
-//                   fontSize: '50px',
-//                 }}
-//                 onClick={() => setOpen(false)}
-//               /> */}
-//           {/* </Toolbar>
-//           </AppBar> */}
-//         </div>
-//       </SwipeableDrawer>
-//     </div>
-//   );
-// };
 
 export default DrawerComponent;
