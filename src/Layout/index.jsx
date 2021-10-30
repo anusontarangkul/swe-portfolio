@@ -28,8 +28,10 @@ import NavRouter from './NavRouter';
 
 const drawerWidth = 300;
 
-const DrawerComponent = (props) => {
+const Layout = (props) => {
   const { window } = props;
+  const { children } = props;
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -182,9 +184,11 @@ const DrawerComponent = (props) => {
         }}
       >
         <Toolbar />
+
+        {children}
       </Box>
     </Box>
   );
 };
 
-export default DrawerComponent;
+export default Layout;
