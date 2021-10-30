@@ -5,7 +5,9 @@ import { purple, green } from '@mui/material/colors'
 import About from './Pages/About/About'
 import Projects from './Pages/Projects/Projects'
 import Skills from './Pages/Skills/Skills'
-
+import Home from './Pages/Home/Home'
+import './App.scss'
+import ReactSnapScroll from 'react-snap-scroll';
 const theme = createTheme({
   palette: {
     background: {
@@ -26,10 +28,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
 
-
+      {/* <ReactSnapScroll transition="move-top-bottom"> */}
       <Router>
         <Layout>
-          <Switch>
+
+          {/* <Switch>
             <Route exact path="/about" component={About}>
               <About />
             </Route>
@@ -39,9 +42,16 @@ function App() {
             <Route exact path="/skills" component={Skills}>
               <Skills />
             </Route>
-          </Switch>
+          </Switch> */}
+          <div className="sections">
+            <Home />
+            <About />
+            <Projects />
+            <Skills />
+          </div>
         </Layout>
       </Router>
+      {/* </ReactSnapScroll> */}
 
 
     </ThemeProvider>

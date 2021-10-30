@@ -1,18 +1,19 @@
 import React, { history } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  NavLink,
-} from 'react-router-dom';
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   NavLink,
+// } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { ListItemButton, ListItemText } from '@mui/material';
 import resume from './resume.pdf';
 
 const NavRouter = () => {
   return (
     <>
-      <NavLink to='/about'>
+      <Link smooth to='#about'>
         <ListItemButton
           sx={{
             marginTop: 4,
@@ -20,17 +21,17 @@ const NavRouter = () => {
         >
           <ListItemText primary='About' />
         </ListItemButton>
-      </NavLink>
-      <NavLink to='/skills'>
+      </Link>
+      <Link smooth to='#skills'>
         <ListItemButton>
           <ListItemText primary='Skills' />
         </ListItemButton>
-      </NavLink>
-      <NavLink to='/projects'>
+      </Link>
+      <Link smooth to='#projects'>
         <ListItemButton>
           <ListItemText primary='Projects' />
         </ListItemButton>
-      </NavLink>
+      </Link>
       <a href={resume} download='anusontarangkul-resume'>
         <ListItemButton>
           <ListItemText primary='Resume' />
