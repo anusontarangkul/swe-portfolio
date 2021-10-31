@@ -1,4 +1,54 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
 .skills {
-  background-color: saddlebrown;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   height: 100vh;
+}
+
+.slide img {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.slide {
+  transform: scale(0.2);
+  transition: transform 300ms;
+  opacity: 0.5;
+}
+
+.activeSlide {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow svg {
+  transition: color 300ms;
+}
+
+.next {
+  right: 0%;
+  top: 50%;
+}
+
+.prev {
+  left: 0%;
+  top: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .skills {
+    width: 90%;
+  }
+  .slide img {
+    width: 10rem;
+  }
 }

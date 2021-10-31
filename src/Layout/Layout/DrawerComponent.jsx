@@ -24,14 +24,12 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import CallIcon from '@mui/icons-material/Call';
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import NavRouter from './NavRouter';
+import NavRouter from '../NavRouter';
 
 const drawerWidth = 300;
 
-const Layout = (props) => {
+const DrawerComponent = (props) => {
   const { window } = props;
-  const { children } = props;
-
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -152,7 +150,7 @@ const Layout = (props) => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { md: 'block', lg: 'none' },
+            display: { sm: 'block', md: 'none' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -164,7 +162,7 @@ const Layout = (props) => {
         <Drawer
           variant='permanent'
           sx={{
-            display: { xs: 'none', sm: 'none', md: 'block' },
+            display: { sm: 'none', md: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
@@ -184,11 +182,9 @@ const Layout = (props) => {
         }}
       >
         <Toolbar />
-
-        {children}
       </Box>
     </Box>
   );
 };
 
-export default Layout;
+export default DrawerComponent;
